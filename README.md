@@ -1,57 +1,62 @@
-# 🫀 Heart Disease Prediction using KNN & SVM
+# 🫀 Heart Disease Prediction using Machine Learning
 
-This project predicts the likelihood of heart disease using two supervised learning algorithms: **K-Nearest Neighbors (KNN)** and **Support Vector Machine (SVM)**. It uses real clinical data from the UCI Cleveland Heart Disease dataset.
-
----
-
-## 📊 Objective
-
-Early prediction of heart disease can help in timely treatment. This model classifies patients as having or not having heart disease based on various health attributes.
+This project applies supervised machine learning algorithms — K-Nearest Neighbors (KNN) and Support Vector Machine (SVM) — to predict the presence of heart disease using the UCI Cleveland Heart Disease dataset.
 
 ---
 
-## 📚 Dataset
+## 📌 Project Overview
 
-- Source: [UCI Cleveland Dataset](https://archive.ics.uci.edu/ml/datasets/Heart+Disease)
-- 13 features like age, blood pressure, cholesterol, etc.
-- Original target values (0–4) converted to binary (0 = no disease, 1 = disease).
-- Cleaned and standardized using `StandardScaler`.
-
----
-
-## 🔍 Models Used
-
-- **KNN (k=5)**: Classifies a patient based on the majority class of its nearest neighbors.
-- **SVM (linear kernel)**: Finds the optimal hyperplane to separate the classes.
+- **Goal**: Predict whether a patient has heart disease based on medical attributes.
+- **Dataset**: [UCI Heart Disease Dataset (Cleveland)](https://archive.ics.uci.edu/ml/datasets/Heart+Disease)
+- **Algorithms Used**: 
+  - K-Nearest Neighbors (KNN)
+  - Support Vector Machine (SVM)
+- **Tools**: Python, Jupyter Notebook, scikit-learn, pandas, matplotlib, seaborn
 
 ---
 
-## ⚙️ Process Overview
+## 🧪 Dataset Description
 
-1. Load and clean dataset.
-2. Handle missing values and convert types.
-3. Scale features and split into train/test sets.
-4. Train and evaluate both models.
-5. Compare accuracy and performance metrics.
+The dataset contains 13 medical features and 1 target variable:
 
----
+- **Features**: age, sex, chest pain type, blood pressure, cholesterol, fasting blood sugar, ECG results, max heart rate, exercise-induced angina, ST depression, slope, number of major vessels, and thalassemia.
+- **Target**: Presence of heart disease (0 = No, 1 = Yes)
 
-## 📈 Results
-
-| Model | Accuracy |
-|-------|----------|
-| KNN   | 86.67%   |
-| SVM   | 90.00%   |
-
-SVM performed slightly better than KNN, likely due to its effectiveness with linearly separable data.
+After preprocessing, the target column was binarized:  
+`target = 1 if disease present, else 0`
 
 ---
 
-## 📁 Included Files
+## ⚙️ Project Workflow
 
-- `heart_disease_knn_svm_final.ipynb`: Main notebook with code.
-- `README.md`: This file.
+1. **Data Loading and Cleaning**  
+   - Handle missing values (`?`) and convert to numeric
+2. **Preprocessing**  
+   - Feature scaling using `StandardScaler`
+   - Train-test split (80/20)
+3. **Model Training**  
+   - Train KNN with k=5
+   - Train SVM with a linear kernel
+4. **Model Evaluation**  
+   - Confusion matrix, accuracy, precision, recall, F1-score
 
 ---
 
+## 📊 Results
+
+| Algorithm | Accuracy |
+|-----------|----------|
+| KNN       | 86.67%   |
+| SVM       | 90.00%   |
+
+SVM slightly outperformed KNN, likely due to its ability to find optimal decision boundaries in high-dimensional space.
+
+---
+
+## 📁 Files Included
+
+- `heart_disease_knn_svm_final.ipynb`: Jupyter Notebook containing full code
+- `README.md`: This file
+
+---
 
